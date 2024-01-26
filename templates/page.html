@@ -33,7 +33,7 @@
                 {% set count = 10 %}
                 {% for file in item['files']%}
                     {% set count = count + 1 %}
-                    <a href="https://t.me/c/{{username}}?start={{item['_id']+count}}" class="files" target="_blank">{{file['file_name']}}</a>
+                    <a href="https://t.me/{{username}}?start={{item['_id']+count}}" class="files" target="_blank">{{file['file_name']}}</a>
                     <br>
                 {% endfor %}
             </div>        
