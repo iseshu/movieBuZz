@@ -4,7 +4,7 @@ from bot import telegram
 import re,os
 
 
-uri = os.environ('URI')
+uri = os.environ.get('URI')
 client = MongoClient(uri)
 db = client['database']
 collection = db['data']
@@ -39,5 +39,5 @@ def tg():
     return jsonify(data)
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0",port=1120)
+    app.run()
 
