@@ -1,0 +1,54 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="image/png" rel="icon" href="https://img.icons8.com/bubbles/100/documentary.png">
+    <meta name="description" content="A website to stream movies online">
+    <meta property="og:title" content="MovieBuzz | iseshu">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+    <title>MovieBuzz | Enjoy telugu movies</title>
+</head>
+
+<body>
+    <div class="header">
+        <span onclick="gohome();" class="head-title">MovieBuZz</span>
+        <div class="mobile-search" onclick="displaySearch();">
+            <span class="material-icons" id="icon">
+                search
+            </span>
+        </div>
+    </div>
+    <div class="m-search-div" id="mdivsearch">
+        <input type="search" id="dosearch" class="m-search" placeholder="Search" value="" placeholder="Search"
+            oninput="dosearch()">
+    </div>
+    <div class="body">
+        <div class="body1">
+            <div class="container">
+                {% for item in items%}
+                <div class="item">
+                    <a href="{{item['_id']}}/{{item['title'].strip().replace(' ','-')}}">
+                        <img height="220" width="165" src="{{item['image']['link']}}" alt="{{item['title']}}" srcset="">
+                        <p>{{item['title']}}</p>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="body2">
+            <br>
+            <div class="adds">
+            </div>
+            <br>
+            <div class="adds">
+            </div>
+        </div>
+    </div>
+    <div class="footer"><a href="https://t.me/yssprojects" target="_blank">Join Telegram Channel</a></div>
+</body>
+
+</html>
