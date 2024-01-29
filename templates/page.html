@@ -33,7 +33,7 @@
                 {% set count = 10 %}
                 {% for file in item['files']%}
                     {% set count = count + 1 %}
-                    <a href="https://myappa-1b93d95e13c0.herokuapp.com/dl/{{item['_id']+count}}?code={{file['file_name']}}" class="files" target="_blank">{{file['file_name']}}</a>
+                    <a href="https://stream.devlion.tech/dl/{{item['_id']+count}}?code={{file['file_name']}}" class="files" target="_blank">{{file['file_name']}}</a>
                     <br>
                 {% endfor %}
             </div>        
