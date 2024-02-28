@@ -9,7 +9,7 @@ client = MongoClient(uri)
 db = client['database']
 collection = db['data']
 app = Flask(__name__)
-
+dwn_url = os.environ.get('STREAM_URL')
 
 
 @app.get('/')
@@ -19,7 +19,7 @@ def index ():
 @app.get('/<id>/<movie>')
 def page(id,movie):
     item= collection.find_one({"_id":int(id)})
-    return render_template('page.html',item=item,username=os.environ.get('BOT_USERNAME'))
+    return render_template('page.html',item=item,username=os.environ.get('BOT_USERNAME'),dwn_url=dwn_url)
 
 @app.get('/search')
 def search():
