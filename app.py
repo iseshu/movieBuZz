@@ -14,7 +14,7 @@ dwn_url = os.environ.get('STREAM_URL')
 @app.get('/')
 def index ():
     items = list(collection.find())
-    return render_template('home.html',items=items[::-1])
+    return render_template('index.html',items=items[::-1])
 @app.get('/<id>/<movie>')
 def page(id,movie):
     item= collection.find_one({"_id":int(id)})
